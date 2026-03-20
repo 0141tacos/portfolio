@@ -1,0 +1,11 @@
+:root {
+  --bs-body-bg: #1a1b26;
+  --bs-body-color: #c0caf5;
+  --bs-primary: #7aa2f7;
+  --bs-success: #9ece6a;
+  --bs-danger: #f7768e;
+}
+
+body {
+  font-family:'Courier New', Courier, monospace;
+}

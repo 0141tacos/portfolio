@@ -1,0 +1,36 @@
+{
+  "Skills": [
+    {
+      "item": "Java",
+      "content": ""
+    },
+    {
+      "item": "Python",
+      "content": ""
+    },
+    {
+      "item": "JavaScript",
+      "content": ""
+    }
+  ],
+  "Certification": [
+    {
+      "item": "Applied Information Technology Engineer Examination",
+      "content": ""
+    }
+  ],
+  "Hobby": [
+    {
+      "item": "running",
+      "content": "I've been running about 20km average in a week."
+    },
+    {
+      "item": "reading",
+      "content": "I read a few books in a Month."
+    },
+    {
+      "item": "workout",
+      "content": "I work out at home twice a week."
+    }
+  ]
+}
