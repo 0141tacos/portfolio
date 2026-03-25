@@ -1,5 +1,18 @@
 <script setup>
 import MENU_CONST from "../constants/const.js";
+/* ◯ホバーしたときに表示を変える用
+import { ref } from "vue";
+
+const isHover = ref(false);
+
+function mouseEnter() {
+  isHover.value = true;
+}
+
+function mouseLeave() {
+  isHover.value = false;
+}
+*/
 
 function scrollToTarget(id) {
   if (id === "top") {
@@ -19,6 +32,17 @@ function scrollToTarget(id) {
   <div class="cursor-pointer">
     <ul class="list-unstyled">
       <li class="p-1">
+        <!-- ◯ホバーしたときに表示を変える用
+        <span
+          class="d-inline"
+          role="button"
+          @mouseenter="mouseEnter"
+          @mouseleave="mouseLeave"
+          @click="scrollToTarget(MENU_CONST.TOP)"
+        >
+          {{ isHover ? "--Top" : "Top" }}
+        </span>
+        -->
         <span
           class="d-inline"
           role="button"
@@ -27,7 +51,7 @@ function scrollToTarget(id) {
           Top
         </span>
       </li>
-      <li class="p-1" role="button">
+      <li class="p-1">
         <span
           class="d-inline"
           role="button"
@@ -36,7 +60,7 @@ function scrollToTarget(id) {
           About
         </span>
       </li>
-      <li class="p-1" role="button">
+      <li class="p-1">
         <span
           class="d-inline"
           role="button"
@@ -48,4 +72,9 @@ function scrollToTarget(id) {
     </ul>
   </div>
 </template>
-<style></style>
+<style>
+li span:hover {
+  color: var(--bs-white);
+  font-weight: bold;
+}
+</style>
