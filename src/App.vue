@@ -26,32 +26,6 @@ import Menu from "./components/Menu.vue";
           <div :id="MENU_CONST.ABOUT">
             <Career></Career>
             <Feature></Feature>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
-            <h1>a</h1>
           </div>
           <div :id="MENU_CONST.CONTACT">
             <h3>Contact</h3>

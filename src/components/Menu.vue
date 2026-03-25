@@ -15,8 +15,9 @@ function scrollToTarget(id) {
   }
 }
 </script>
+
 <template>
-  <div class="cursor-pointer">
+  <div id="menu">
     <ul class="list-unstyled">
       <li class="p-1">
         <span
@@ -27,7 +28,7 @@ function scrollToTarget(id) {
           Top
         </span>
       </li>
-      <li class="p-1" role="button">
+      <li class="p-1">
         <span
           class="d-inline"
           role="button"
@@ -36,7 +37,7 @@ function scrollToTarget(id) {
           About
         </span>
       </li>
-      <li class="p-1" role="button">
+      <li class="p-1">
         <span
           class="d-inline"
           role="button"
@@ -48,4 +49,10 @@ function scrollToTarget(id) {
     </ul>
   </div>
 </template>
-<style></style>
+
+<style>
+li span:hover {
+  color: var(--bs-white);
+  font-weight: bold;
+}
+</style>
