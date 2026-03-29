@@ -6,10 +6,10 @@ import Menu from "./components/Menu.vue";
 </script>
 
 <template>
-  <div class="container">
-    <div class="d-flex">
-      <div class="position-fixed top-50 translate-middle-y w-25">
-        <div><h1 class="text-5xl">Hirotaka Sato</h1></div>
+  <div class="max-w-8/10 m-8 p-4">
+    <div class="flex">
+      <div class="w-25 flex-auto m-5">
+        <div><h1 class="">Hirotaka Sato</h1></div>
         <div><h2>Fullstack Engineer</h2></div>
         <div>
           <p>
@@ -21,7 +21,7 @@ import Menu from "./components/Menu.vue";
         </div>
         <Menu></Menu>
       </div>
-      <div class="w-75" id="self-introduction">
+      <div class="w-70 flex-auto m-5" id="">
         <div class="row">
           <div :id="MENU_CONST.ABOUT">
             <Career></Career>
