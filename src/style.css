@@ -6,6 +6,8 @@
   --bs-danger: #f7768e;
 }
 
+@import "tailwindcss";
+
 body {
   font-family:'Courier New', Courier, monospace;
 }

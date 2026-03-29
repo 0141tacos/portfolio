@@ -9,7 +9,7 @@ import Menu from "./components/Menu.vue";
   <div class="container">
     <div class="d-flex">
       <div class="position-fixed top-50 translate-middle-y w-25">
-        <div><h1>Hirotaka Sato</h1></div>
+        <div><h1 class="text-5xl">Hirotaka Sato</h1></div>
         <div><h2>Fullstack Engineer</h2></div>
         <div>
           <p>
