@@ -6,13 +6,13 @@ import Menu from "./components/Menu.vue";
 </script>
 
 <template>
-  <div class="max-w-8/10 m-8 p-4">
-    <div class="flex">
-      <div class="w-25 flex-auto m-5">
-        <div><h1 class="">Hirotaka Sato</h1></div>
-        <div><h2>Fullstack Engineer</h2></div>
+  <div class="max-w-9/10 mx-auto m-5">
+    <div class="flex flex-col md:flex-row">
+      <div class="flex-[1] m-5 p-2">
+        <div><h1 class="text-3xl">Hirotaka Sato</h1></div>
+        <div><h2 class="text-lg font-semibold">Fullstack Engineer</h2></div>
         <div>
-          <p>
+          <p class="font-normal">
             Full-stack engineer building web applications with Python and
             JavaScript.<br />
             Interested in software architecture and cloud infrastructure.<br />
@@ -21,7 +21,7 @@ import Menu from "./components/Menu.vue";
         </div>
         <Menu></Menu>
       </div>
-      <div class="w-70 flex-auto m-5" id="">
+      <div class="flex-[2] m-5 p-2" id="">
         <div class="row">
           <div :id="MENU_CONST.ABOUT">
             <Career></Career>

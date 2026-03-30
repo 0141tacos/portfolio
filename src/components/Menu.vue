@@ -21,8 +21,7 @@ function scrollToTarget(id) {
     <ul class="list-unstyled">
       <li class="p-1">
         <span
-          class="d-inline"
-          role="button"
+          class="inline cursor-pointer"
           @click="scrollToTarget(MENU_CONST.TOP)"
         >
           Top
@@ -30,8 +29,7 @@ function scrollToTarget(id) {
       </li>
       <li class="p-1">
         <span
-          class="d-inline"
-          role="button"
+          class="inline cursor-pointer"
           @click="scrollToTarget(MENU_CONST.ABOUT)"
         >
           About
@@ -39,8 +37,7 @@ function scrollToTarget(id) {
       </li>
       <li class="p-1">
         <span
-          class="d-inline"
-          role="button"
+          class="inline cursor-pointer"
           @click="scrollToTarget(MENU_CONST.CONTACT)"
         >
           Contact
