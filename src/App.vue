@@ -6,13 +6,13 @@ import Menu from "./components/Menu.vue";
 </script>
 
 <template>
-  <div class="container">
-    <div class="d-flex">
-      <div class="position-fixed top-50 translate-middle-y w-25">
-        <div><h1>Hirotaka Sato</h1></div>
-        <div><h2>Fullstack Engineer</h2></div>
-        <div>
-          <p>
+  <div class="container mx-auto m-5 min-w-xs">
+    <div class="flex flex-col md:flex-row">
+      <div class="flex-[2] p-5">
+        <div><h1 class="text-3xl m-1">Hirotaka Sato</h1></div>
+        <div><h2 class="text-lg font-semibold m-1">Fullstack Engineer</h2></div>
+        <div class="m-1">
+          <p class="font-light">
             Full-stack engineer building web applications with Python and
             JavaScript.<br />
             Interested in software architecture and cloud infrastructure.<br />
@@ -21,15 +21,17 @@ import Menu from "./components/Menu.vue";
         </div>
         <Menu></Menu>
       </div>
-      <div class="w-75" id="self-introduction">
-        <div class="row">
+      <div class="flex-[3] p-5" id="">
+        <div class="">
           <div :id="MENU_CONST.ABOUT">
             <Career></Career>
             <Feature></Feature>
           </div>
-          <div :id="MENU_CONST.CONTACT">
-            <h3>Contact</h3>
-            <p>hogehoge@gmail.com</p>
+          <div :id="MENU_CONST.CONTACT" class="m-1">
+            <h3 class="text-2xl">Contact</h3>
+            <div class="m-1">
+              <p class="">hogehoge@gmail.com</p>
+            </div>
           </div>
         </div>
       </div>
@@ -37,9 +39,4 @@ import Menu from "./components/Menu.vue";
   </div>
 </template>
 
-<style scoped>
-#self-introduction {
-  margin-left: 40%;
-  margin-top: 10%;
-}
-</style>
+<style scoped></style>

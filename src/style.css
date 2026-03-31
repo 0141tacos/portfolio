@@ -1,11 +1,30 @@
-:root {
-  --bs-body-bg: #1a1b26;
-  --bs-body-color: #c0caf5;
-  --bs-primary: #7aa2f7;
-  --bs-success: #9ece6a;
-  --bs-danger: #f7768e;
+@import "tailwindcss";
+
+@theme {
+  --color-bg-base:       #1a1b26;
+  --color-bg-surface:    #24283b;
+  --color-text-base:     #c0caf5;
+  --color-text-muted:    #565f89;
+  --color-accent-green:  #9ece6a;
+  --color-accent-cyan:   #7dcfff;
 }
 
-body {
-  font-family:'Courier New', Courier, monospace;
+@layer base {
+  body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-base);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  h1, h2, h3 {
+    color: var(--color-accent-green);
+  }
+
+  a {
+    color: var(--color-accent-cyan);
+  }
+
+  p {
+    color: var(--color-text-muted);
+  }
 }
