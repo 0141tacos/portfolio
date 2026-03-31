@@ -17,27 +17,27 @@ function scrollToTarget(id) {
 </script>
 
 <template>
-  <div id="menu">
-    <ul class="list-unstyled">
-      <li class="p-1">
+  <div id="menu" class="m-1">
+    <ul class="list-none">
+      <li class="m-1">
         <span
-          class="inline cursor-pointer"
+          class="inline cursor-pointer hover:font-bold"
           @click="scrollToTarget(MENU_CONST.TOP)"
         >
           Top
         </span>
       </li>
-      <li class="p-1">
+      <li class="m-1">
         <span
-          class="inline cursor-pointer"
+          class="inline cursor-pointer hover:font-bold"
           @click="scrollToTarget(MENU_CONST.ABOUT)"
         >
           About
         </span>
       </li>
-      <li class="p-1">
+      <li class="m-1">
         <span
-          class="inline cursor-pointer"
+          class="inline cursor-pointer hover:font-bold"
           @click="scrollToTarget(MENU_CONST.CONTACT)"
         >
           Contact
@@ -47,9 +47,4 @@ function scrollToTarget(id) {
   </div>
 </template>
 
-<style>
-li span:hover {
-  color: var(--bs-white);
-  font-weight: bold;
-}
-</style>
+<style></style>

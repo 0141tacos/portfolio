@@ -11,9 +11,14 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="" id="{category}" v-for="(entries, category) in featureData" :key="category">
-    <h3>{{ category }}</h3>
-    <ul>
+  <div
+    class="m-1"
+    id="{category}"
+    v-for="(entries, category) in featureData"
+    :key="category"
+  >
+    <h3 class="text-2xl">{{ category }}</h3>
+    <ul class="m-1">
       <dl class="" v-for="entry in entries" :key="entry.item">
         <dt class="">{{ entry.item }}</dt>
         <dd class="" v-if="entry.content">{{ entry.content }}</dd>
