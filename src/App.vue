@@ -31,6 +31,7 @@ import Menu from "./components/Menu.vue";
             <h3 class="text-2xl">Contact</h3>
             <div class="m-1">
               <p class="">hogehoge@gmail.com</p>
+              <a href="https://x.com/baretaco_rundev" target="_blank" rel="noopener noreferrer">X</a>
             </div>
           </div>
         </div>
