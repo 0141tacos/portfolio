@@ -1,19 +1,19 @@
 {
-    "career": [
-        {
-            "id": 1,
-            "period": "2020/4~2022/3",
-            "position": "Sales"
-        },
-        {
-            "id": 2,
-            "period": "2022/4~2025/10",
-            "position": "PM"
-        },
-        {
-            "id": 3,
-            "period": "2025/11~current",
-            "position": "Engineer"
-        }
-    ]
+  "career": [
+    {
+      "id": 1,
+      "period": "2020/4~2022/3",
+      "position": "Sales"
+    },
+    {
+      "id": 2,
+      "period": "2022/4~2025/10",
+      "position": "PM"
+    },
+    {
+      "id": 3,
+      "period": "2025/11~current",
+      "position": "Engineer"
+    }
+  ]
 }
