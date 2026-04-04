@@ -1,10 +1,10 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted } from 'vue';
 
 const careerData = ref({});
 
 onMounted(async () => {
-  const response = await fetch("/career.json");
+  const response = await fetch('/career.json');
   const json = await response.json();
   careerData.value = json.career;
   console.log(careerData.value);

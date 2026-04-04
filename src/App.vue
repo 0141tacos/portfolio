@@ -1,8 +1,8 @@
 <script setup>
-import MENU_CONST from "./constants/const.js";
-import Career from "./components/Career.vue";
-import Feature from "./components/Feature.vue";
-import Menu from "./components/Menu.vue";
+import MENU_CONST from './constants/const.js';
+import Career from './components/Career.vue';
+import Feature from './components/Feature.vue';
+import Menu from './components/Menu.vue';
 </script>
 
 <template>
@@ -10,7 +10,9 @@ import Menu from "./components/Menu.vue";
     <div class="flex flex-col md:flex-row">
       <div class="flex-[2] p-5">
         <div><h1 class="text-3xl m-1">Hirotaka Sato</h1></div>
-        <div><h2 class="text-lg font-semibold m-1">Fullstack Engineer</h2></div>
+        <div>
+          <h2 class="text-lg font-semibold m-1">Fullstack Engineer</h2>
+        </div>
         <div class="m-1">
           <p class="font-light">
             Full-stack engineer building web applications with Python and
@@ -23,7 +25,7 @@ import Menu from "./components/Menu.vue";
       </div>
       <div class="flex-[3] p-5" id="">
         <router-view></router-view>
-     </div>
+      </div>
     </div>
   </div>
 </template>

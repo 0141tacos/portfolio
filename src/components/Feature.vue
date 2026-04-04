@@ -1,10 +1,10 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted } from 'vue';
 
 const featureData = ref({});
 
 onMounted(async () => {
-  const response = await fetch("/feature.json");
+  const response = await fetch('/feature.json');
   const json = await response.json();
   featureData.value = json;
 });

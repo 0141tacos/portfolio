@@ -1,28 +1,28 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* 背景 */
-  --color-bg-base:      #1a1b26;  /* 深い紺黒 */
-  --color-bg-raised:    #24283b;  /* やや明るい紺 */
-  --color-bg-border:    #414868;  /* くすんだ青紫 */
+  --color-bg-base: #1a1b26; /* 深い紺黒 */
+  --color-bg-raised: #24283b; /* やや明るい紺 */
+  --color-bg-border: #414868; /* くすんだ青紫 */
 
   /* テキスト */
-  --color-text-primary:   #c0caf5;  /* 薄い青白 */
-  --color-text-secondary: #a9b1d6;  /* くすんだ青白 */
-  --color-text-muted:     #737aa2;  /* 中間の青紫 */
-  --color-text-faint:     #545c7e;  /* 暗い青紫 */
+  --color-text-primary: #c0caf5; /* 薄い青白 */
+  --color-text-secondary: #a9b1d6; /* くすんだ青白 */
+  --color-text-muted: #737aa2; /* 中間の青紫 */
+  --color-text-faint: #545c7e; /* 暗い青紫 */
 
   /* アクセント */
-  --color-accent-blue:       #7aa2f7;  /* 明るいコバルトブルー */
-  --color-accent-blue-light: #89ddff;  /* 淡いスカイブルー */
-  --color-accent-cyan:       #7dcfff;  /* 明るいシアン */
-  --color-accent-green:      #9ece6a;  /* 黄緑 */
-  --color-accent-teal:       #73daca;  /* 明るいティール */
-  --color-accent-purple:     #bb9af7;  /* 明るいラベンダー */
-  --color-accent-orange:     #ff9e64;  /* 明るいオレンジ */
-  --color-accent-yellow:     #e0af68;  /* 落ち着いたゴールド */
-  --color-accent-red:        #f7768e;  /* 明るいサーモンピンク */
-  --color-accent-red-deep:   #db4b4b;  /* 濃いレッド */
+  --color-accent-blue: #7aa2f7; /* 明るいコバルトブルー */
+  --color-accent-blue-light: #89ddff; /* 淡いスカイブルー */
+  --color-accent-cyan: #7dcfff; /* 明るいシアン */
+  --color-accent-green: #9ece6a; /* 黄緑 */
+  --color-accent-teal: #73daca; /* 明るいティール */
+  --color-accent-purple: #bb9af7; /* 明るいラベンダー */
+  --color-accent-orange: #ff9e64; /* 明るいオレンジ */
+  --color-accent-yellow: #e0af68; /* 落ち着いたゴールド */
+  --color-accent-red: #f7768e; /* 明るいサーモンピンク */
+  --color-accent-red-deep: #db4b4b; /* 濃いレッド */
 }
 
 @layer base {
@@ -32,12 +32,24 @@
     font-family: 'JetBrains Mono', monospace;
   }
 
-  h1 { color: var(--color-accent-blue); }
-  h2 { color: var(--color-accent-purple); }
-  h3 { color: var(--color-accent-teal); }
-  h4 { color: var(--color-accent-cyan); }
-  h5 { color: var(--color-accent-yellow); }
-  h6 { color: var(--color-accent-orange); }
+  h1 {
+    color: var(--color-accent-blue);
+  }
+  h2 {
+    color: var(--color-accent-purple);
+  }
+  h3 {
+    color: var(--color-accent-teal);
+  }
+  h4 {
+    color: var(--color-accent-cyan);
+  }
+  h5 {
+    color: var(--color-accent-yellow);
+  }
+  h6 {
+    color: var(--color-accent-orange);
+  }
 
   p {
     color: var(--color-text-secondary);
@@ -51,7 +63,8 @@
     color: var(--color-accent-blue-light);
   }
 
-  code, pre {
+  code,
+  pre {
     background-color: var(--color-bg-raised);
     color: var(--color-accent-green);
   }
@@ -65,13 +78,16 @@
     border-color: var(--color-bg-border);
   }
 
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     background-color: var(--color-bg-raised);
     color: var(--color-text-primary);
     border-color: var(--color-bg-border);
   }
 
-  input::placeholder, textarea::placeholder {
+  input::placeholder,
+  textarea::placeholder {
     color: var(--color-text-faint);
   }
 
