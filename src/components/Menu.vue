@@ -20,6 +20,9 @@ function scrollToTarget(id) {
   <div id="menu" class="m-1">
     <ul class="list-none">
       <li class="m-1">
+        <router-link to="/" class="text-md font-bold">Home</router-link>
+    <ul class="list-none">
+      <li class="m-1">
         <span
           class="inline cursor-pointer hover:font-bold"
           @click="scrollToTarget(MENU_CONST.TOP)"
@@ -42,6 +45,11 @@ function scrollToTarget(id) {
         >
           Contact
         </span>
+      </li>
+    </ul>
+      </li>
+      <li class="m-1">
+        <router-link to="/blog" class="text-md font-bold">Blog</router-link>
       </li>
     </ul>
   </div>
