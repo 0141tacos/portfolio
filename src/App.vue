@@ -22,25 +22,8 @@ import Menu from "./components/Menu.vue";
         <Menu></Menu>
       </div>
       <div class="flex-[3] p-5" id="">
-        <div class="">
-          <div :id="MENU_CONST.ABOUT">
-            <Career></Career>
-            <Feature></Feature>
-          </div>
-          <div :id="MENU_CONST.CONTACT" class="m-1">
-            <h3 class="text-2xl">Contact</h3>
-            <div class="m-1">
-              <p class="">hogehoge@gmail.com</p>
-              <a
-                href="https://x.com/baretaco_rundev"
-                target="_blank"
-                rel="noopener noreferrer"
-                >X</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+        <router-view></router-view>
+     </div>
     </div>
   </div>
 </template>
