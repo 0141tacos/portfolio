@@ -20,7 +20,7 @@ function scrollToTarget(id) {
   <div id="menu" class="m-1">
     <ul class="list-none">
       <li class="m-1">
-        <router-link to="/" class="text-md font-bold">Home</router-link>
+        <router-link to="/" class="text-md font-bold hover:font-bold">Home</router-link>
         <ul class="list-none">
           <li class="m-1">
             <span
@@ -49,7 +49,7 @@ function scrollToTarget(id) {
         </ul>
       </li>
       <li class="m-1">
-        <router-link to="/blog" class="text-md font-bold">Blog</router-link>
+        <router-link to="/blog" class="text-md font-bold hover:font-bold">Blog</router-link>
       </li>
     </ul>
   </div>

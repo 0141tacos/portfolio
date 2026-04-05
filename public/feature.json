@@ -21,15 +21,15 @@
   ],
   "Hobby": [
     {
-      "item": "running",
+      "item": "Running",
       "content": "I've been running about 20km average in a week."
     },
     {
-      "item": "reading",
+      "item": "Reading",
       "content": "I read a few books in a Month."
     },
     {
-      "item": "workout",
+      "item": "Workout",
       "content": "I work out at home twice a week."
     }
   ]
