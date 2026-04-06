@@ -15,10 +15,10 @@ onMounted(async () => {
   <div id="career" class="m-1">
     <h3 class="text-2xl">Career</h3>
     <ul class="list-none m-1">
-      <li class="grid grid-cols-8" v-for="item in careerData" :key="item.id">
-        <span class="col-span-2">{{ item.period }}</span>
-        <span class="col-span-1">:</span>
-        <span class="col-span-2">{{ item.position }}</span>
+      <li class="flex" v-for="item in careerData" :key="item.id">
+        <span class="w-40">{{ item.period }}</span>
+        <span class="w-5">:</span>
+        <span class="w-35">{{ item.position }}</span>
       </li>
     </ul>
   </div>

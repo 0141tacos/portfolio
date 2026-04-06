@@ -21,7 +21,7 @@ onMounted(async () => {
     <ul class="m-1">
       <dl class="" v-for="entry in entries" :key="entry.item">
         <dt class="">{{ entry.item }}</dt>
-        <dd class="" v-if="entry.content">{{ entry.content }}</dd>
+        <dd class="text-sm font-light" v-if="entry.content">{{ entry.content }}</dd>
       </dl>
     </ul>
   </div>
