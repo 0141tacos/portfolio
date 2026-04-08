@@ -8,7 +8,7 @@ import Menu from './components/Menu.vue';
 <template>
   <div class="container mx-auto m-5 min-w-xs">
     <div class="flex flex-col md:flex-row">
-      <div class="flex-[2] p-5">
+      <div class="flex-[2] px-5">
         <div><h1 class="text-3xl m-1">Hirotaka Sato</h1></div>
         <div>
           <h2 class="text-lg font-semibold m-1">Fullstack Engineer</h2>
@@ -23,7 +23,7 @@ import Menu from './components/Menu.vue';
         </div>
         <Menu></Menu>
       </div>
-      <div class="flex-[3] p-5" id="">
+      <div class="flex-[3] px-5" id="">
         <router-view></router-view>
       </div>
     </div>
