@@ -24,7 +24,7 @@ function scrollToTarget(id) {
         <ul class="list-none">
           <li class="m-1">
             <span
-              class="inline cursor-pointer hover:font-bold"
+              class="inline cursor-pointer hover:font-bold font-thin"
               @click="scrollToTarget(MENU_CONST.TOP)"
             >
               Top
@@ -32,7 +32,7 @@ function scrollToTarget(id) {
           </li>
           <li class="m-1">
             <span
-              class="inline cursor-pointer hover:font-bold"
+              class="inline cursor-pointer hover:font-bold font-thin"
               @click="scrollToTarget(MENU_CONST.ABOUT)"
             >
               About
@@ -40,7 +40,7 @@ function scrollToTarget(id) {
           </li>
           <li class="m-1">
             <span
-              class="inline cursor-pointer hover:font-bold"
+              class="inline cursor-pointer hover:font-bold font-thin"
               @click="scrollToTarget(MENU_CONST.CONTACT)"
             >
               Contact
