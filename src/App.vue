@@ -10,7 +10,7 @@ import Menu from './components/Menu.vue';
     <div class="flex flex-col md:flex-row min-h-screen">
       <div
         class="flex-[2] px-5 md:sticky md:top-0 md:h-screen md:flex md:flex-col md:py-20"
-        id="left-menu"
+        id=""
       >
         <div><h1 class="text-3xl m-1">Hirotaka Sato</h1></div>
         <div>
