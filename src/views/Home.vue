@@ -5,7 +5,7 @@ import Feature from '@/components/Feature.vue';
 </script>
 
 <template>
-  <div class="container mx-auto m-5 min-w-xs">
+  <div class="container mx-auto min-w-xs">
     <div class="">
       <div :id="MENU_CONST.ABOUT">
         <Career></Career>

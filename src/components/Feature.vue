@@ -20,10 +20,24 @@ onMounted(async () => {
     <h3 class="text-2xl">{{ category }}</h3>
     <ul class="m-1">
       <dl class="" v-for="entry in entries" :key="entry.item">
-        <dt class="">{{ entry.item }}</dt>
-        <dd class="text-sm font-light" v-if="entry.content">{{ entry.content }}</dd>
+        <dt class="font-light">{{ entry.item }}</dt>
+        <dd class="text-sm text-text-secondary font-thin" v-if="entry.content">{{ entry.content }}</dd>
       </dl>
     </ul>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
+    <h1>test</h1>
   </div>
 </template>
 
