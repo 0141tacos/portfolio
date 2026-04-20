@@ -101,3 +101,12 @@
     border-color: var(--color-bg-border);
   }
 }
+
+@layer components {
+  .tag-test {
+    @apply rounded-full px-3 py-1 text-sm border border-bg-border text-text-muted;
+  }
+  .tag-test2 {
+    @apply rounded-full px-3 py-1 text-sm border border-accent-red text-accent-red;
+  }
+}
