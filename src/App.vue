@@ -1,7 +1,4 @@
 <script setup>
-import MENU_CONST from './constants/const.js';
-import Career from './components/Career.vue';
-import Feature from './components/Feature.vue';
 import Menu from './components/Menu.vue';
 </script>
 
