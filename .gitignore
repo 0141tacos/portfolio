@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# パスワードなどの機密情報を記載しているため
+.env
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
