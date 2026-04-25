@@ -16,8 +16,17 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
+    "@eslint/css": "^1.1.0",
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^1.2.0",
+    "@eslint/markdown": "^8.0.1",
     "@vitejs/plugin-vue": "^5.2.3",
+    "eslint": "^10.2.1",
+    "eslint-config-xo": "^0.51.0",
+    "eslint-plugin-vue": "^10.9.0",
+    "globals": "^17.5.0",
     "sass": "^1.98.0",
+    "typescript": "^6.0.3",
     "vite": "^6.3.5"
   }
 }
