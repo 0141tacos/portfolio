@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS careers (
 );
 
 CREATE TABLE IF NOT EXISTS skills (
-  id serial PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   skill_name varchar(255) NOT NULL,
   description text,
   created_at timestamp DEFAULT current_timestamp,
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS skills (
 );
 
 CREATE TABLE IF NOT EXISTS certifications (
-  id serial PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   certification_name varchar(255) NOT NULL,
   description text,
   acquired_date date,
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS certifications (
 );
 
 CREATE TABLE IF NOT EXISTS hobbies (
-  id serial PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   hobby_name varchar(255) NOT NULL,
   description text,
   created_at timestamp DEFAULT current_timestamp,
