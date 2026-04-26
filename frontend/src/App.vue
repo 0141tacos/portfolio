@@ -6,8 +6,8 @@ import Menu from './components/Menu.vue';
   <div class="container mx-auto min-w-xs">
     <div class="flex flex-col md:flex-row min-h-screen">
       <div
-        class="flex-[2] px-5 md:sticky md:top-0 md:h-screen md:flex md:flex-col md:py-20"
         id=""
+        class="flex-[2] px-5 md:sticky md:top-0 md:h-screen md:flex md:flex-col md:py-20"
       >
         <div><h1 class="text-3xl m-1">Hirotaka Sato</h1></div>
         <div>
