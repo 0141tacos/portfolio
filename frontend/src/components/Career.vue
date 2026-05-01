@@ -1,13 +1,11 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+import { useCareerStore } from '@/stores/careerStore';
 
-const careerData = ref({});
+const store = useCareerStore();
 
 onMounted(async () => {
-  const response = await fetch('/career.json');
-  const json = await response.json();
-  careerData.value = json.career;
-  console.log(careerData.value);
+  await store.fetchCareers();
 });
 </script>
 
@@ -15,10 +13,12 @@ onMounted(async () => {
   <div id="career" class="m-1">
     <h3 class="text-2xl">Career</h3>
     <ul class="list-none m-1">
-      <li class="flex" v-for="item in careerData" :key="item.id">
-        <span class="w-40">{{ item.period }}</span>
+      <li class="flex" v-for="career in store.careers" :key="career.id">
+        <span class="w-40"
+          >{{ career.period_from }}~{{ career.period_to ?? 'current' }}</span
+        >
         <span class="w-5">:</span>
-        <span class="w-35">{{ item.position }}</span>
+        <span class="w-35">{{ career.position }}</span>
       </li>
     </ul>
   </div>

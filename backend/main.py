@@ -49,10 +49,20 @@ def read_root():
 # careersテーブルから全ての情報を取得する
 @app.get("/careers")
 def read_careers():
-    sql = "SELECT * FROM careers"
+    sql = """
+        SELECT
+            id,
+            TO_CHAR(period_from, 'YYYY/FMMM') as period_from,
+            TO_CHAR(period_to, 'YYYY/FMMM') as period_to,
+            position
+        FROM careers
+        """
     try:
         with get_cursor() as cursor:
             cursor.execute(sql)
-            return cursor.fetchall()
+            rows = cursor.fetchall()
+            # 以下はリスト内包表記で短く記載している
+            columns = [desc[0] for desc in cursor.description]
+            return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
