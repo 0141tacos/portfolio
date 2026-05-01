@@ -14,6 +14,7 @@ dist-ssr
 
 # パスワードなどの機密情報を記載しているため
 .env
+.env.*
 
 # Editor directories and files
 .vscode/*
