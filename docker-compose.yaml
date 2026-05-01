@@ -7,6 +7,7 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - '5432:5432'
+    # 以下volumesは商用では削除していい気がする。
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./backend/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -22,6 +23,7 @@ services:
       - '8000:8000'
     environment:
       DATABASE_URL: ${DATABASE_URL}
+    # 以下volumesは商用では削除する。デバックと挙動確認のためにローカルのファイルを見るようにしている。
     volumes:
       - ./backend:/app
     depends_on:
@@ -32,6 +34,10 @@ services:
     build: ./frontend
     ports:
       - '5173:5173'
+    # 以下volumesは商用では削除する。デバックと挙動確認のためにローカルのファイルを見るようにしている。
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
     depends_on:
       - backend
 
