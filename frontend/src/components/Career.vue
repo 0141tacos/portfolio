@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
 import { useCareerStore } from '@/stores/careerStore';
 
 const store = useCareerStore();

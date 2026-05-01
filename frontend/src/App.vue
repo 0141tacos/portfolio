@@ -1,8 +1,5 @@
 <script setup>
 import Menu from './components/Menu.vue';
-import { useCareerStore } from '@/stores/careerStore';
-
-const store = useCareerStore();
 </script>
 
 <template>
