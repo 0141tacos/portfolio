@@ -48,7 +48,7 @@ def read_root():
 
 # careersテーブルから全ての情報を取得する
 @app.get("/careers")
-def read_careers() -> None:
+def read_careers():
     sql = "SELECT * FROM careers"
     try:
         with get_cursor() as cursor:
