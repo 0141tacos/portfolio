@@ -15,7 +15,7 @@ onMounted(async () => {
     <div v-if="store.error" class="m-1">
       <p>Failed to fetch careers.</p>
     </div>
-    <div v-if="store.loading" class="m-1"><p>Loading...</p></div>
+    <div v-else-if="store.loading" class="m-1"><p>Loading...</p></div>
     <ul v-else class="list-none m-1">
       <li class="flex" v-for="career in store.careers" :key="career.id">
         <span class="w-40"
