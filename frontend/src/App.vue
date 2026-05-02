@@ -14,7 +14,7 @@ import Menu from './components/Menu.vue';
           <h2 class="text-lg font-semibold m-1">Fullstack Engineer</h2>
         </div>
         <div class="m-1">
-          <p class="font-thin">
+          <p>
             Full-stack engineer building web applications with Python and
             JavaScript.<br />
             Interested in software architecture and cloud infrastructure.<br />
