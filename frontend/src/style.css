@@ -29,7 +29,7 @@
   body {
     background-color: var(--color-bg-base);
     color: var(--color-text-primary);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono', 'Noto Sans JP', monospace;
   }
 
   h1 {
@@ -49,6 +49,15 @@
   }
   h6 {
     color: var(--color-accent-orange);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
   }
 
   p {
