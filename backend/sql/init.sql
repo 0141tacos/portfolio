@@ -13,6 +13,9 @@ CREATE TABLE IF NOT EXISTS skills (
   id SERIAL PRIMARY KEY,
   skill_name varchar(255) NOT NULL,
   description text,
+  skill_level varchar(50) NOT NULL,
+  is_active boolean NOT NULL,
+  category varchar(50) NOT NULL,
   created_at timestamp DEFAULT current_timestamp,
   updated_at timestamp DEFAULT current_timestamp
 );
