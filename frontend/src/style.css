@@ -34,21 +34,27 @@
 
   h1 {
     color: var(--color-accent-blue);
+    font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
   }
   h2 {
     color: var(--color-accent-purple);
+    font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
   }
   h3 {
     color: var(--color-accent-teal);
+    font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
   }
   h4 {
     color: var(--color-accent-cyan);
+    font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
   }
   h5 {
     color: var(--color-accent-yellow);
+    font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
   }
   h6 {
     color: var(--color-accent-orange);
+    font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
   }
 
   p {
