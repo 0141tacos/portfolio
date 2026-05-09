@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# 挙動確認用ファイル
+demo.py
+
 # パスワードなどの機密情報を記載しているため
 .env
 .env.*
