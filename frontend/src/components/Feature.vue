@@ -1,27 +1,32 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
+import { useSkillStore } from '@/stores/skillStore';
 
-const featureData = ref({});
+const skillStore = useSkillStore();
 
 onMounted(async () => {
-  const response = await fetch('/feature.json');
-  const json = await response.json();
-  featureData.value = json;
+  await skillStore.fetchSkills();
 });
 </script>
 
 <template>
-  <div
-    class="m-1"
-    id="{category}"
-    v-for="(entries, category) in featureData"
-    :key="category"
-  >
-    <h3 class="text-2xl">{{ category }}</h3>
-    <ul class="m-1">
-      <dl class="" v-for="entry in entries" :key="entry.item">
-        <dt class="font-light">{{ entry.item }}</dt>
-        <dd class="text-sm text-text-secondary font-thin" v-if="entry.content">{{ entry.content }}</dd>
+  <div class="m-1">
+    <h3 class="text-2xl">Skills</h3>
+    <div v-if="skillStore.error" class="m-1">
+      <p>Failed to fetch skills.</p>
+    </div>
+    <div v-else-if="skillStore.loading" class="m-1">
+      <p>Loading...</p>
+    </div>
+    <ul v-else class="m-1">
+      <dl class="" v-for="skill in skillStore.skills" :key="skill.id">
+        <dt class="font-light">{{ skill.skill_name }}</dt>
+        <dd
+          class="text-sm text-text-secondary font-thin"
+          v-if="skill.description"
+        >
+          {{ skill.description }}
+        </dd>
       </dl>
     </ul>
     <h1>test</h1>

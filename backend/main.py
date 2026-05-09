@@ -66,3 +66,25 @@ def read_careers():
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/skills")
+def read_skills():
+    sql = """
+        select
+            id,
+            skill_name,
+            description,
+            skill_level,
+            is_active,
+            category
+        from skills
+        """
+    try:
+        with get_cursor() as cursor:
+            cursor.execute(sql)
+            rows = cursor.fetchall()
+            columns = [desc[0] for desc in cursor.description]
+            return [dict(zip(columns, row)) for row in rows]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
