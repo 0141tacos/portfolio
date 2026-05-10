@@ -56,6 +56,7 @@ def read_careers():
             TO_CHAR(period_to, 'YYYY/FMMM') as period_to,
             position
         FROM careers
+        ORDER BY period_from ASC
         """
     try:
         with get_cursor() as cursor:
@@ -71,14 +72,38 @@ def read_careers():
 @app.get("/skills")
 def read_skills():
     sql = """
-        select
+        SELECT
             id,
             skill_name,
             description,
             skill_level,
             is_active,
             category
-        from skills
+        FROM skills
+        ORDER BY
+            category DESC,
+            is_active DESC,
+            skill_name ASC
+        """
+    try:
+        with get_cursor() as cursor:
+            cursor.execute(sql)
+            rows = cursor.fetchall()
+            columns = [desc[0] for desc in cursor.description]
+            return [dict(zip(columns, row)) for row in rows]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/hobbies")
+def read_hobbies():
+    sql = """
+        SELECT
+            id,
+            hobby_name,
+            description
+        FROM hobbies
+        ORDER BY hobby_name ASC
         """
     try:
         with get_cursor() as cursor:
