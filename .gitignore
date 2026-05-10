@@ -12,8 +12,11 @@ dist
 dist-ssr
 *.local
 
+# python
 # 挙動確認用ファイル
-demo.py
+demo.py 
+__pycache__/
+.venv/
 
 # パスワードなどの機密情報を記載しているため
 .env
