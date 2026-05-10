@@ -21,8 +21,8 @@ onMounted(async () => {
     <div v-else-if="skillStore.loading" class="m-1">
       <p>Loading...</p>
     </div>
-    <ul v-else class="m-1">
-      <dl class="" v-for="skill in skillStore.skills" :key="skill.id">
+    <div v-else>
+      <dl class="m-1" v-for="skill in skillStore.skills" :key="skill.id">
         <dt class="font-light">{{ skill.skill_name }}</dt>
         <dd
           class="text-sm text-text-secondary font-thin"
@@ -31,7 +31,7 @@ onMounted(async () => {
           {{ skill.description }}
         </dd>
       </dl>
-    </ul>
+    </div>
 
     <h3 class="text-2xl">Hobbies</h3>
     <div v-if="hobbyStore.error" class="m-1">
@@ -40,8 +40,8 @@ onMounted(async () => {
     <div v-else-if="hobbyStore.loading" class="m-1">
       <p>Loading...</p>
     </div>
-    <ul v-else class="m-1">
-      <dl class="" v-for="hobby in hobbyStore.hobbies" :key="hobby.id">
+    <div v-else>
+      <dl class="m-1" v-for="hobby in hobbyStore.hobbies" :key="hobby.id">
         <dt class="font-light">{{ hobby.hobby_name }}</dt>
         <dd
           class="text-sm text-text-secondary font-thin"
@@ -50,7 +50,7 @@ onMounted(async () => {
           {{ hobby.description }}
         </dd>
       </dl>
-    </ul>
+    </div>
   </div>
 </template>
 

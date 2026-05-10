@@ -14,7 +14,7 @@ dist-ssr
 
 # python
 # 挙動確認用ファイル
-demo.py 
+demo.py
 __pycache__/
 .venv/
 
