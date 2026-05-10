@@ -95,6 +95,29 @@ def read_skills():
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.get("/certifications")
+def read_certifications():
+    sql = """
+        SELECT
+            id,
+            certification_name,
+            description,
+            acquired_date
+        FROM certifications
+        ORDER BY
+            acquired_date DESC,
+            certification_name ASC
+        """
+    try:
+        with get_cursor() as cursor:
+            cursor.execute(sql)
+            rows = cursor.fetchall()
+            columns = [desc[0] for desc in cursor.description]
+            return [dict(zip(columns, row)) for row in rows]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @app.get("/hobbies")
 def read_hobbies():
     sql = """

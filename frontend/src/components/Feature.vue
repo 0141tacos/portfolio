@@ -2,13 +2,16 @@
 import { onMounted } from 'vue';
 import { useSkillStore } from '@/stores/skillStore';
 import { useHobbyStore } from '@/stores/hobbyStore';
+import { useCertificationStore } from '@/stores/certificationStore';
 
 const skillStore = useSkillStore();
 const hobbyStore = useHobbyStore();
+const certificationStore = useCertificationStore();
 
 onMounted(async () => {
   await skillStore.fetchSkills();
   await hobbyStore.fetchHobbies();
+  await certificationStore.fetchCertifications();
 });
 </script>
 
@@ -29,6 +32,29 @@ onMounted(async () => {
           v-if="skill.description"
         >
           {{ skill.description }}
+        </dd>
+      </dl>
+    </div>
+
+    <h3 class="text-2xl">Certifications</h3>
+    <div v-if="certificationStore.error" class="m-1">
+      <p>Failed to fetch certifications.</p>
+    </div>
+    <div v-else-if="certificationStore.loading" class="m-1">
+      <p>Loading...</p>
+    </div>
+    <div v-else>
+      <dl
+        class="m-1"
+        v-for="certification in certificationStore.certifications"
+        :key="certification.id"
+      >
+        <dt class="font-light">{{ certification.certification_name }}</dt>
+        <dd
+          class="text-sm text-text-secondary font-thin"
+          v-if="certification.description"
+        >
+          {{ certification.description }}
         </dd>
       </dl>
     </div>
