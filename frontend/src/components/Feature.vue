@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted } from 'vue';
 import { useCareerStore } from '@/stores/careerStore';
 import { useSkillStore } from '@/stores/skillStore';
 import { useHobbyStore } from '@/stores/hobbyStore';
