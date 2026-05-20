@@ -1,6 +1,5 @@
 <script setup>
 import MENU_CONST from '@/constants/const.js';
-import Career from '@/components/Career.vue';
 import Feature from '@/components/Feature.vue';
 </script>
 
@@ -8,7 +7,6 @@ import Feature from '@/components/Feature.vue';
   <div class="container mx-auto min-w-xs">
     <div class="">
       <div :id="MENU_CONST.ABOUT">
-        <Career></Career>
         <Feature></Feature>
       </div>
       <div :id="MENU_CONST.CONTACT" class="m-1">

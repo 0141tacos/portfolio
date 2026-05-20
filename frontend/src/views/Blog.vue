@@ -2,14 +2,18 @@
 import { ref } from 'vue';
 import Blog from '@/components/BlogContent.vue';
 
-const blogs = ref({});
+const blogs = ref([]);
 
 const fetchBlogs = async () => {
-  const res = await fetch(`${import.meta.env.VITE_API_URL}/blogs`);
-  blogs = await res.json();
+  try {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/blogs`);
+    blogs.value = await res.json();
+  } catch (e) {
+    console.error('Fail to fetch blogs', e);
+  }
 };
 
-fetchBlogs;
+fetchBlogs();
 </script>
 
 <template>
