@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import Blog from '@/components/BlogContent.vue';
+import BlogContent from '@/components/BlogContent.vue';
 
 const blogs = ref([]);
 
@@ -30,10 +30,7 @@ fetchBlogs();
         <span class="tag-test">{{ blog.tag }}</span>
         <span class="mx-1 tag-test2">{{ blog.sub_tag }}</span>
       </article>
-      <article class="border-2 rounded-2xl p-3 m-1">
-        <h4>title</h4>
-        <p>testcontent</p>
-      </article>
+      <BlogContent />
     </div>
   </div>
 </template>
