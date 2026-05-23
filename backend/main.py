@@ -136,3 +136,26 @@ def read_hobbies():
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/blogs")
+def read_blogs():
+    sql = """
+        SELECT
+            id,
+            title,
+            description,
+            tag,
+            sub_tag
+        FROM blogs
+        ORDER BY
+            id ASC
+        """
+    try:
+        with get_cursor() as cursor:
+            cursor.execute(sql)
+            rows = cursor.fetchall()
+            columns = [desc[0] for desc in cursor.description]
+            return [dict(zip(columns, row)) for row in rows]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

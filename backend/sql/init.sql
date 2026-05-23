@@ -37,6 +37,16 @@ CREATE TABLE IF NOT EXISTS hobbies (
   updated_at timestamp DEFAULT current_timestamp
 );
 
+CREATE TABLE IF NOT EXISTS blogs (
+  id SERIAL PRIMARY KEY,
+  title varchar(255) NOT NULL,
+  description text,
+  tag varchar(255),
+  sub_tag varchar(255),
+  created_at timestamp DEFAULT current_timestamp,
+  updated_at timestamp DEFAULT current_timestamp
+);
+
 CREATE OR REPLACE FUNCTION update_updated_at_column () returns trigger AS $$
 begin
   new.updated_at = current_timestamp;
@@ -58,4 +68,8 @@ EXECUTE FUNCTION update_updated_at_column ();
 
 CREATE TRIGGER set_updated_at_hobbies before
 UPDATE ON hobbies FOR each ROW
+EXECUTE FUNCTION update_updated_at_column ();
+
+CREATE TRIGGER set_updated_at_blogs before
+UPDATE ON blogs FOR each ROW
 EXECUTE FUNCTION update_updated_at_column ();
