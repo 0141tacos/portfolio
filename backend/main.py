@@ -1,3 +1,4 @@
+import logging
 import os
 from contextlib import contextmanager
 
@@ -5,8 +6,6 @@ import psycopg2
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from psycopg2 import pool
-
-from logging 
 
 app = FastAPI()
 logger = logging.getLogger(__name__)
