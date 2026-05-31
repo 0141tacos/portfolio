@@ -66,7 +66,7 @@ def read_careers():
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
 @app.get("/skills")
@@ -92,7 +92,7 @@ def read_skills():
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
 @app.get("/certifications")
@@ -115,7 +115,7 @@ def read_certifications():
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
 @app.get("/hobbies")
@@ -135,7 +135,7 @@ def read_hobbies():
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
 @app.get("/blogs")
@@ -158,4 +158,4 @@ def read_blogs():
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail="Internal Server Error")
