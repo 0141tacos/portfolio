@@ -6,7 +6,10 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from psycopg2 import pool
 
+from logging 
+
 app = FastAPI()
+logger = logging.getLogger(__name__)
 
 # CORSの設定
 app.add_middleware(
@@ -66,6 +69,7 @@ def read_careers():
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
+        logger.exception(e)
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
@@ -92,6 +96,7 @@ def read_skills():
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
+        logger.exception(e)
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
@@ -115,6 +120,7 @@ def read_certifications():
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
+        logger.exception(e)
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
@@ -135,6 +141,7 @@ def read_hobbies():
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
+        logger.exception(e)
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
@@ -158,4 +165,5 @@ def read_blogs():
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in rows]
     except Exception as e:
+        logger.exception(e)
         raise HTTPException(status_code=500, detail="Internal Server Error")
