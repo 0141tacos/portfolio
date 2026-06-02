@@ -20,17 +20,7 @@ fetchBlogs();
   <div class="container mx-auto min-w-xs">
     <h3 class="text-2xl">Blog</h3>
     <div id="blog" class="m-1">
-      <article
-        class="border-2 rounded-2xl p-3 m-1"
-        v-for="blog in blogs"
-        :key="blog.id"
-      >
-        <h4>{{ blog.title }}</h4>
-        <p>{{ blog.description }}</p>
-        <span class="tag-test">{{ blog.tag }}</span>
-        <span class="mx-1 tag-test2">{{ blog.sub_tag }}</span>
-      </article>
-      <BlogContent />
+      <BlogContent v-for="blog in blogs" :key="blog.id" :blog="blog" />
     </div>
   </div>
 </template>
