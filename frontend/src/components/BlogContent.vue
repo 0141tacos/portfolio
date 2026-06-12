@@ -14,9 +14,9 @@ const props = defineProps({
       <p class="m-1">{{ blog.description }}</p>
       <div class="m-1">
         <span v-if="blog.tag" class="mx-1 tag-test">{{ blog.tag }}</span>
-        <span v-if="blog.sub_tag" class="mx-1 tag-test2">{{
-          blog.sub_tag
-        }}</span>
+        <span v-if="blog.sub_tag" class="mx-1 tag-test2">
+          {{ blog.sub_tag }}
+        </span>
       </div>
     </article>
   </div>

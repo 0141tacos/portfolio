@@ -17,7 +17,7 @@ certificationStore.fetchCertifications();
 
 <template>
   <div id="career" class="m-1">
-    <h3 class="text-2xl">Career</h3>
+    <h3 class="">Career</h3>
     <div v-if="careerStore.error" class="m-1">
       <p>Failed to fetch careers.</p>
     </div>
@@ -34,7 +34,7 @@ certificationStore.fetchCertifications();
   </div>
 
   <div class="m-1">
-    <h3 class="text-2xl">Skills</h3>
+    <h3 class="">Skills</h3>
     <div v-if="skillStore.error" class="m-1">
       <p>Failed to fetch skills.</p>
     </div>
@@ -53,7 +53,7 @@ certificationStore.fetchCertifications();
       </dl>
     </div>
 
-    <h3 class="text-2xl">Certifications</h3>
+    <h3 class="">Certifications</h3>
     <div v-if="certificationStore.error" class="m-1">
       <p>Failed to fetch certifications.</p>
     </div>
@@ -76,7 +76,7 @@ certificationStore.fetchCertifications();
       </dl>
     </div>
 
-    <h3 class="text-2xl">Hobbies</h3>
+    <h3 class="">Hobbies</h3>
     <div v-if="hobbyStore.error" class="m-1">
       <p>Failed to fetch hobbies.</p>
     </div>

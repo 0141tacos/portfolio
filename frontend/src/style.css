@@ -34,12 +34,15 @@
 
   h1 {
     color: var(--color-accent-blue);
+    @apply text-3xl;
   }
   h2 {
     color: var(--color-accent-purple);
+    @apply text-lg;
   }
   h3 {
     color: var(--color-accent-teal);
+    @apply text-2xl
   }
   h4 {
     color: var(--color-accent-cyan);
@@ -99,6 +102,8 @@
     background-color: var(--color-bg-raised);
     color: var(--color-text-primary);
     border-color: var(--color-bg-border);
+    width: 95%;
+    @apply mx-auto;
   }
 
   input::placeholder,

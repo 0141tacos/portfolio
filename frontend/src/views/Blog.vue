@@ -34,7 +34,7 @@ fetchBlogs();
 <template>
   <div class="container mx-auto min-w-xs">
     <div class="flex justify-start">
-      <h3 class="column text-2xl">Blog</h3>
+      <h3 class="column">Blog</h3>
     </div>
     <div class="flex justify-end">
       <button @click="goToPost">+new</button>
