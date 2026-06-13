@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import BlogContent from '@/components/BlogContent.vue';
+import { useRouter } from 'vue-router';
 
 const blogs = ref([]);
 const blogLoading = ref(false);
@@ -20,12 +21,24 @@ const fetchBlogs = async () => {
   }
 };
 
+const router = useRouter();
+
+const goToPost = () => {
+  // 今後認証チェックを追加するため、RouterLinkではなくuseRouterを使用
+  router.push('/blogPost');
+};
+
 fetchBlogs();
 </script>
 
 <template>
   <div class="container mx-auto min-w-xs">
-    <h3 class="text-2xl">Blog</h3>
+    <div class="flex justify-start">
+      <h3 class="column">Blog</h3>
+    </div>
+    <div class="flex justify-end">
+      <button @click="goToPost">+new</button>
+    </div>
     <div v-if="blogLoading" class="m-1">
       <p>Loading...</p>
     </div>
