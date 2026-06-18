@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS hobbies (
 CREATE TABLE IF NOT EXISTS blogs (
   id SERIAL PRIMARY KEY,
   title varchar(255) NOT NULL,
-  description text,
+  content text,
   tag varchar(255),
   sub_tag varchar(255),
   created_at timestamp DEFAULT current_timestamp,

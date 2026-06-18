@@ -1,11 +1,12 @@
 import logging
 import os
 from contextlib import contextmanager
+from typing import Optional
 
-import psycopg2
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from psycopg2 import pool
+from pydantic import BaseModel
 
 app = FastAPI()
 logger = logging.getLogger(__name__)
@@ -26,6 +27,13 @@ connection_pool = pool.ThreadedConnectionPool(
     host="db",
     dsn=os.getenv("DATABASE_URL"),
 )
+
+
+class BlogPost(BaseModel):
+    title: str
+    content: str
+    tag: Optional[str] = None
+    sub_tag: Optional[str] = None
 
 
 @contextmanager
@@ -150,7 +158,7 @@ def read_blogs():
         SELECT
             id,
             title,
-            description,
+            content,
             tag,
             sub_tag
         FROM blogs
@@ -163,6 +171,22 @@ def read_blogs():
             rows = cursor.fetchall()
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in rows]
+    except Exception as e:
+        logger.exception(e)
+        raise HTTPException(status_code=500, detail="Internal Server Error")
+
+
+@app.post("/blogs")
+def post_blog(blog: BlogPost):
+    sql = """
+        INSERT into blogs
+        (title, content, tag, sub_tag)
+        values (%s, %s, %s, %s)
+        """
+    try:
+        with get_cursor() as cursor:
+            cursor.execute(sql, (blog.title, blog.content, blog.tag, blog.sub_tag))
+            return {"message": "Blog post created successfully"}
     except Exception as e:
         logger.exception(e)
         raise HTTPException(status_code=500, detail="Internal Server Error")

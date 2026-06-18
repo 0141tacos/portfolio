@@ -1,29 +1,64 @@
 <script setup>
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
+const title = ref('');
+const content = ref('');
+const tag = ref('');
+const sub_tag = ref('');
+
+const postOk = ref(null);
+const postError = ref(null);
+
 const goToBlog = () => {
   router.push('/blog');
+};
+
+const postBlog = async () => {
+  try {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/blogs`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        title: title.value,
+        content: content.value,
+        tag: tag.value,
+        sub_tag: sub_tag.value,
+      }),
+    });
+
+    if (!res.ok) throw new Error(`API error ${res.status}`);
+    postOk.value = 'Blog post created successfully';
+  } catch (e) {
+    console.error(e);
+    postError.value = e.message;
+  }
 };
 </script>
 
 <template>
   <div class="container mx-auto min-w-xs">
+    <h3>Blog Post</h3>
+    <p class="min-h-6 flex justify-center m-1">
+      <span v-if="postOk">{{ postOk }}</span>
+      <span v-else-if="postError" class="error"> Failed to create post </span>
+    </p>
+
     <div class="flex flex-col">
-      <h3>Blog Post</h3>
       <h4>Title</h4>
-      <input />
+      <input v-model="title" />
       <h4>Tag</h4>
-      <input />
+      <input v-model="tag" />
       <h4>Sub Tag</h4>
-      <input />
-      <h4>Contents</h4>
-      <textarea />
+      <input v-model="sub_tag" />
+      <h4>Content</h4>
+      <textarea v-model="content" />
     </div>
     <div class="flex flex-row justify-end">
       <button class="font-thin" @click="goToBlog">Back</button>
-      <button>Post</button>
+      <button v-if="!postOk" @click="postBlog">Post</button>
     </div>
   </div>
 </template>
