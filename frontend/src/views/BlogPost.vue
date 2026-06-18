@@ -41,13 +41,12 @@ const postBlog = async () => {
 <template>
   <div class="container mx-auto min-w-xs">
     <h3>Blog Post</h3>
-    <div v-if="postOk">
-      <p>{{ postOk }}</p>
-    </div>
-    <div v-else-if="postError">
-      <p>Failed to create post</p>
-    </div>
-    <div v-else class="flex flex-col">
+    <p class="min-h-6 flex justify-center m-1">
+      <span v-if="postOk">{{ postOk }}</span>
+      <span v-else-if="postError" class="error"> Failed to create post </span>
+    </p>
+
+    <div class="flex flex-col">
       <h4>Title</h4>
       <input v-model="title" />
       <h4>Tag</h4>
@@ -59,7 +58,7 @@ const postBlog = async () => {
     </div>
     <div class="flex flex-row justify-end">
       <button class="font-thin" @click="goToBlog">Back</button>
-      <button v-if="!postOk && !postError" @click="postBlog">Post</button>
+      <button v-if="!postOk" @click="postBlog">Post</button>
     </div>
   </div>
 </template>
