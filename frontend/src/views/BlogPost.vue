@@ -32,7 +32,7 @@ const postBlog = async () => {
     if (!res.ok) throw new Error(`API error ${res.status}`);
     postOk.value = 'Blog post created successfully';
   } catch (e) {
-    console.error('Internal Server Error');
+    console.error(e);
     postError.value = e.message;
   }
 };

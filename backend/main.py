@@ -1,11 +1,12 @@
 import logging
 import os
 from contextlib import contextmanager
+from typing import Optional
 
-from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from psycopg2 import pool
+from pydantic import BaseModel
 
 app = FastAPI()
 logger = logging.getLogger(__name__)
@@ -31,8 +32,8 @@ connection_pool = pool.ThreadedConnectionPool(
 class BlogPost(BaseModel):
     title: str
     content: str
-    tag: str
-    sub_tag: str
+    tag: Optional[str] = None
+    sub_tag: Optional[str] = None
 
 
 @contextmanager
