@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { supabase } from '@/lib/supabase.js';
 
 export const useSkillStore = defineStore('skill', {
   state: () => ({
@@ -14,9 +15,9 @@ export const useSkillStore = defineStore('skill', {
       this.error = null;
       this.loading = true;
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/skills`);
-        if (!res.ok) throw new Error(`API error: ${res.status}`);
-        this.skills = await res.json();
+        const { data, error } = await supabase.from('skills').select();
+        if (error) throw new Error(`API error: ${error}`);
+        this.skills = data;
         this.fetched = true;
       } catch (e) {
         this.error = e.message;
