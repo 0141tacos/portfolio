@@ -16,7 +16,7 @@ export const useCertificationStore = defineStore('certification', {
       this.loading = true;
       try {
         const { data, error } = await supabase.from('certifications').select();
-        if (error) throw new Error(`API error: ${error}`);
+        if (error) throw error;
         this.certifications = data;
         this.fetched = true;
       } catch (e) {

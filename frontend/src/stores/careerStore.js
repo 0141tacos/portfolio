@@ -16,7 +16,7 @@ export const useCareerStore = defineStore('career', {
       this.loading = true;
       try {
         const { data, error } = await supabase.from('careers').select();
-        if (error) throw new Error(`API error: ${error}`);
+        if (error) throw error;
         this.careers = data;
         this.fetched = true;
       } catch (e) {

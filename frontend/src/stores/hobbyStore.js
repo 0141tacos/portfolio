@@ -16,7 +16,7 @@ export const useHobbyStore = defineStore('hobby', {
       this.loading = true;
       try {
         const { data, error } = await supabase.from('hobbies').select();
-        if (error) throw new Error(`API error: ${error}`);
+        if (error) throw error;
         this.hobbies = data;
         this.fetched = true;
       } catch (e) {

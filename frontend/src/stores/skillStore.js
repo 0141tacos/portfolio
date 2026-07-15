@@ -16,7 +16,7 @@ export const useSkillStore = defineStore('skill', {
       this.loading = true;
       try {
         const { data, error } = await supabase.from('skills').select();
-        if (error) throw new Error(`API error: ${error}`);
+        if (error) throw error;
         this.skills = data;
         this.fetched = true;
       } catch (e) {
