@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { supabase } from '@/lib/supabase.js';
 
 export const useCertificationStore = defineStore('certification', {
   state: () => ({
@@ -14,11 +15,9 @@ export const useCertificationStore = defineStore('certification', {
       this.error = null;
       this.loading = true;
       try {
-        const res = await fetch(
-          `${import.meta.env.VITE_API_URL}/certifications`
-        );
-        if (!res.ok) throw new Error(`API error: ${res.status}`);
-        this.certifications = await res.json();
+        const { data, error } = await supabase.from('certifications').select();
+        if (error) throw error;
+        this.certifications = data;
         this.fetched = true;
       } catch (e) {
         this.error = e.message;
