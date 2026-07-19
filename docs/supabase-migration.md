@@ -2,7 +2,7 @@
 
 **ゴール:** FastAPI を廃止し、**Vercel（フロント） + Supabase（Postgres + PostgREST + RLS）** 構成へ移行する。
 
-**現在地:** フェーズ3（フロント連携）進行中。`supabase-js` 導入・`skillStore` の疎通確認まで完了。次は残りの読み取り系store（career/hobby/certification/blog閲覧）の置換確認。
+**現在地:** フェーズ3（フロント連携）完了。次はフェーズ4（旧構成の撤去 & デプロイ）。
 
 最終更新: 2026-07-15
 
@@ -32,9 +32,10 @@
 ## フェーズ3：フロント連携
 
 - [x] `supabase-js` 導入
-- [ ] 各 store の `fetch` → supabase 呼び出しに置換（読み取り系から先に）
-  - [x] skillStore（疎通確認済み）
-  - [ ] careerStore / hobbyStore / certificationStore / blog閲覧 ◀ 今ここ
+- [x] 各 store の `fetch` → supabase 呼び出しに置換（読み取り系から先に）
+  - [x] skillStore / careerStore / hobbyStore / certificationStore（置換・疎通確認・レビュー済み。エラーハンドリングは`throw error`で統一）
+  - [x] blog閲覧（`Blog.vue`、同パターンで置換・レビュー済み）
+  - [x] `BlogPost.vue` 削除、`router/index.js` から `/blogPost` ルート除去（投稿UIはSupabase管理画面運用の方針のため不要に）
 - [x] ~~Supabase Auth（blog投稿機能の認証）~~ → blog投稿はSupabase管理画面（Table Editor）で運用する方針に変更（判断ログ参照）。ポートフォリオアプリ側に投稿UI・認証は実装しない
 
 ## フェーズ4：旧構成の撤去 & デプロイ
