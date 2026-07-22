@@ -4,7 +4,7 @@
 
 **現在地:** フェーズ3（フロント連携）完了。次はフェーズ4（旧構成の撤去 & デプロイ）。
 
-最終更新: 2026-07-15
+最終更新: 2026-07-22
 
 ---
 
@@ -59,3 +59,7 @@
   - 当面は③で運用することに決定。投稿者は本人のみで十分機能し、デプロイを急ぎたいため移行のクリティカルパスから外した。既存の`BlogPost.vue`（投稿フォーム）は今後不要になる見込み。
   - ②（別アプリとしての管理画面）は学習目的の将来プロジェクトとして保留。フェーズ4完了後、余裕があれば着手を検討する。
 - **ハマりどころ：docker-composeでnpmパッケージ追加後にimport解決エラー:** `frontend`サービスは `volumes: - ./frontend:/app - /app/node_modules` という構成で、`/app/node_modules` が無名ボリュームとしてbind mountを上書きしている。そのため `package.json` にパッケージを追加して `docker-compose up --build` しても、古い無名ボリュームの`node_modules`がそのまま使われて新パッケージが反映されないことがあった。`docker-compose down` でコンテナ・無名ボリュームごと削除してから `--build` で作り直すことで解決。今後パッケージを追加する際は同様の手順を踏む。
+- **ルーティング方針（フェーズ4）:** vue-routerは`createWebHistory`（history mode）のままとし、Vercel側で`vercel.json`にrewrite設定を入れて直リンク404を回避する方針とした。hash modeへの変更は却下：ポートフォリオとして共有するURLの見た目やSEOを優先し、rewrite設定自体はVercelで数行足すだけで済むため（2026-07-22）。
+- **`vercel.json`の配置場所:** `frontend`配下に置く方針。VercelのRoot Directoryを`frontend`に設定する前提のため、リポジトリルートではなく`frontend`配下に置かないと認識されない（2026-07-22）。
+- **デプロイ方式:** Vercel×GitHub連携（Git Integration）で自動デプロイする方針。PRごとにPreviewデプロイ、mainマージでProductionデプロイが自動発行される。既存のPRベースの開発フローと相性が良く、CLIでの手動デプロイは不採用とした（2026-07-22）。
+- **CI/CDの役割分担:** GitHub Actionsはlint/テスト実行専用とし、デプロイ自体はVercelのGit連携に任せる方針とした（2026-07-22）。
