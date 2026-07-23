@@ -2,7 +2,7 @@
 
 **ゴール:** FastAPI を廃止し、**Vercel（フロント） + Supabase（Postgres + PostgREST + RLS）** 構成へ移行する。
 
-**現在地:** フェーズ3（フロント連携）完了。次はフェーズ4（旧構成の撤去 & デプロイ）。
+**現在地:** フェーズ4進行中。Vercelデプロイ + 環境変数設定は完了（スマホからのアクセスも確認済み）。残りはFastAPI / docker-compose撤去とCI/CD（GitHub Actions）。
 
 最終更新: 2026-07-22
 
@@ -41,7 +41,7 @@
 ## フェーズ4：旧構成の撤去 & デプロイ
 
 - [ ] FastAPI / docker-compose 撤去、環境変数整理
-- [ ] Vercel デプロイ + 環境変数設定
+- [x] Vercel デプロイ + 環境変数設定
 - [ ] CI/CD（GitHub Actions）
 
 ---
@@ -63,3 +63,4 @@
 - **`vercel.json`の配置場所:** `frontend`配下に置く方針。VercelのRoot Directoryを`frontend`に設定する前提のため、リポジトリルートではなく`frontend`配下に置かないと認識されない（2026-07-22）。
 - **デプロイ方式:** Vercel×GitHub連携（Git Integration）で自動デプロイする方針。PRごとにPreviewデプロイ、mainマージでProductionデプロイが自動発行される。既存のPRベースの開発フローと相性が良く、CLIでの手動デプロイは不採用とした（2026-07-22）。
 - **CI/CDの役割分担:** GitHub Actionsはlint/テスト実行専用とし、デプロイ自体はVercelのGit連携に任せる方針とした（2026-07-22）。
+- **Vercelデプロイ完了:** Root Directory設定・環境変数登録・`frontend/vercel.json`のrewrite設定・GitHub連携を実施し、初回デプロイに成功。スマホからのアクセスでもSPAルーティングが正しく機能することを確認済み（2026-07-22）。
