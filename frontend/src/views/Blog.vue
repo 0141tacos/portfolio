@@ -14,7 +14,6 @@ const fetchBlogTags = async () => {
     console.error('Failed to fetch blogs tag', e);
     tagGetError.value = e.message;
   }
-  console.log(tags.value);
 };
 
 const blogs = ref([]);
@@ -23,7 +22,6 @@ const blogError = ref(null);
 const filterSelected = ref([]);
 const fetchBlogs = async (tag) => {
   let query = supabase.from('blogs').select();
-  console.log(filterSelected);
   if (tag && tag.length > 0) {
     query = query.in('tag', tag);
   }
@@ -57,7 +55,7 @@ fetchBlogs();
       </div>
       <div v-else>
         <select v-model="filterSelected" class="block" multiple>
-          <option v-for="tag in tags" :key="tag" :value="tag.tag">
+          <option v-for="tag in tags" :key="tag.tag" :value="tag.tag">
             {{ tag.tag }}
           </option>
         </select>
