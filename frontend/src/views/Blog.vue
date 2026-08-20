@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabase.js';
 
 const tags = ref([]);
 const tagGetError = ref(null);
+const filterSelected = ref([]);
 const fetchBlogTags = async () => {
   try {
     const { data, error } = await supabase.from('distinct_tags').select('tag');
@@ -19,7 +20,6 @@ const fetchBlogTags = async () => {
 const blogs = ref([]);
 const blogLoading = ref(false);
 const blogError = ref(null);
-const filterSelected = ref([]);
 const fetchBlogs = async (tag) => {
   let query = supabase.from('blogs').select();
   if (tag && tag.length > 0) {
@@ -27,6 +27,7 @@ const fetchBlogs = async (tag) => {
   }
   try {
     blogLoading.value = true;
+    blogError.value = null;
     const { data, error } = await query;
     if (error) throw error;
     blogs.value = data;
@@ -51,14 +52,36 @@ fetchBlogs();
     <div>
       <h4>Filter</h4>
       <div v-if="tagGetError" class="m-1">
-        <p>Failed to fetch blogs tag</p>
+        <p>Failed to fetch blog's tag</p>
       </div>
       <div v-else>
-        <select v-model="filterSelected" class="block" multiple>
-          <option v-for="tag in tags" :key="tag.tag" :value="tag.tag">
-            {{ tag.tag }}
-          </option>
-        </select>
+        <details>
+          <summary>
+            Tag:
+            <template v-if="filterSelected && filterSelected.length">
+              <span
+                v-for="selectedTag in filterSelected"
+                :key="selectedTag"
+                class="mx-1 tag-test"
+              >
+                {{ selectedTag }}
+              </span>
+            </template>
+            <span v-else>select tag</span>
+          </summary>
+          <ul>
+            <li v-for="tag in tags" :key="tag.tag">
+              <label>
+                <input
+                  type="checkbox"
+                  :value="tag.tag"
+                  v-model="filterSelected"
+                />
+                {{ tag.tag }}
+              </label>
+            </li>
+          </ul>
+        </details>
       </div>
       <button @click="fetchBlogs(filterSelected)">apply</button>
     </div>
