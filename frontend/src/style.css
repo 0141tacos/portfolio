@@ -96,7 +96,6 @@
     border-color: var(--color-bg-border);
   }
 
-  input,
   textarea,
   select {
     background-color: var(--color-bg-raised);
