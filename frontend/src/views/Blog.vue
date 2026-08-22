@@ -39,6 +39,10 @@ const fetchBlogs = async (tag) => {
   }
 };
 
+const resetTag = () => {
+  filterSelected.value = [];
+};
+
 fetchBlogTags();
 fetchBlogs();
 </script>
@@ -84,6 +88,7 @@ fetchBlogs();
         </details>
       </div>
       <button @click="fetchBlogs(filterSelected)">apply</button>
+      <button @click="resetTag">reset</button>
     </div>
 
     <div>
