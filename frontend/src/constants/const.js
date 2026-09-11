@@ -1,8 +1,14 @@
 // MENUで使うidの文字列を管理
-const MENU_CONST = {
+export const MENU_CONST = {
   TOP: 'top',
   ABOUT: 'about',
   CONTACT: 'contact',
 };
 
-export default MENU_CONST;
+// Blogのフィルターの項目を管理
+export const BLOG_FILTER = {
+  TAG: {
+    name: 'Tag',
+    var: 'tag',
+  },
+};
