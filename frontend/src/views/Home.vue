@@ -1,5 +1,5 @@
 <script setup>
-import MENU_CONST from '@/constants/const.js';
+import { MENU_CONST } from '@/constants/const.js';
 import Feature from '@/components/Feature.vue';
 </script>
 

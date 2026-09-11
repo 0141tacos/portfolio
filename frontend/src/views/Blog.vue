@@ -1,18 +1,20 @@
 <script setup>
 import { ref } from 'vue';
 import BlogContent from '@/components/BlogContent.vue';
+import BlogFilter from '@/components/BlogFilter.vue';
+import { BLOG_FILTER } from '@/constants/const.js';
 import { supabase } from '@/lib/supabase.js';
 
-const tags = ref([]);
+const tagsArray = ref([]);
 const tagGetError = ref(null);
-const filterSelected = ref([]);
+const tagsSelected = ref([]);
 const fetchBlogTags = async () => {
   try {
     const { data, error } = await supabase.from('distinct_tags').select('tag');
     if (error) throw error;
-    tags.value = data;
+    tagsArray.value = data;
   } catch (e) {
-    console.error('Failed to fetch blogs tag', e);
+    console.error("Failed to fetch blog's tag", e);
     tagGetError.value = e.message;
   }
 };
@@ -40,7 +42,7 @@ const fetchBlogs = async (tag) => {
 };
 
 const resetTag = () => {
-  filterSelected.value = [];
+  tagsSelected.value = [];
 };
 
 fetchBlogTags();
@@ -59,35 +61,13 @@ fetchBlogs();
         <p>Failed to fetch blog's tag</p>
       </div>
       <div v-else>
-        <details>
-          <summary>
-            Tag:
-            <template v-if="filterSelected && filterSelected.length">
-              <span
-                v-for="selectedTag in filterSelected"
-                :key="selectedTag"
-                class="mx-1 tag-test"
-              >
-                {{ selectedTag }}
-              </span>
-            </template>
-            <span v-else>select tag</span>
-          </summary>
-          <ul>
-            <li v-for="tag in tags" :key="tag.tag">
-              <label>
-                <input
-                  type="checkbox"
-                  :value="tag.tag"
-                  v-model="filterSelected"
-                />
-                {{ tag.tag }}
-              </label>
-            </li>
-          </ul>
-        </details>
+        <BlogFilter
+          :filterCategory="BLOG_FILTER.TAG.name"
+          :filterCategoryItemsArray="tagsArray"
+          v-model:filterSelected="tagsSelected"
+        />
       </div>
-      <button @click="fetchBlogs(filterSelected)">apply</button>
+      <button @click="fetchBlogs(tagsSelected)">apply</button>
       <button @click="resetTag">reset</button>
     </div>
 
