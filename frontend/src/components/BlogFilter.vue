@@ -36,14 +36,14 @@ const toggleItem = (item) => {
     </summary>
 
     <ul>
-      <li v-for="item in filterCategoryItemsArray" :key="item.tag">
+      <li v-for="item in filterCategoryItemsArray" :key="item.name">
         <label>
           <input
             type="checkbox"
-            :checked="isChecked(item.tag)"
-            @change="toggleItem(item.tag)"
+            :checked="isChecked(item.name)"
+            @change="toggleItem(item.name)"
           />
-          {{ item.tag }}
+          {{ item.name }}
         </label>
       </li>
     </ul>
