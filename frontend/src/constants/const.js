@@ -11,4 +11,8 @@ export const BLOG_FILTER = {
     name: 'Tag',
     var: 'tag',
   },
+  SUBTAG: {
+    name: 'Subtag',
+    var: 'sub_tag',
+  },
 };
